@@ -1,6 +1,6 @@
 [user]
-	name = chuchodavids
-	email = chuchodavids1@gmail.com
+	name = Jesus
+	email = {{ .chezmoi.username }}@netskope.com
 [alias]
   tags = tag -n99
   logs = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
@@ -31,21 +31,16 @@
 	autoUpdate = true
 [branch]
 	sort = -committerdate
-[maintenance]
-	repo = /Users/chuchodavids/developer/telcoin
-	repo = /Users/chuchodavids/developer/devops-infrastructure
-
 [delta]
   features = decorations
   side-by-side = false
   map-styles = bold purple
   navigate = true
   line-numbers = true
-
+  map-styles = bold purple => syntax magenta, bold cyan => syntax blue
 [delta "interactive"]
   keep-plus-minus-markers = false
   diffFilter = delta --color-only --features=interactive --diff-so-fancy
-
 [delta "decorations"]
     commit-decoration-style = blue ol
     commit-style = raw
