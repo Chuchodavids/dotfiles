@@ -1,0 +1,5 @@
+matches:
+  - trigger: ":ps"
+    replace: "ps aux --sort=-%mem | head -n 10"
+    label: show processes using most memory
+    

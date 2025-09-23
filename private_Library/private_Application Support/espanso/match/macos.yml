@@ -1,0 +1,4 @@
+matches:
+  - trigger: ":resetcache"
+    replace: "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+    label: flush macos cache

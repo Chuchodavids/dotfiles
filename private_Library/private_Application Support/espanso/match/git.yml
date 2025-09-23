@@ -1,0 +1,12 @@
+matches:
+    - trigger: "gpd"
+      replace: "git push --delete origin "
+      label: delete branch
+
+    - trigger: "gbdm"
+      replace: "git branch | grep -v $|$ | xargs git branch -d {}"
+      label: delete all merged local branches
+
+    - trigger: "glp"
+      replace: 'git log --pretty=format:"%h - %an, %ar : %s"'
+      label: show git log

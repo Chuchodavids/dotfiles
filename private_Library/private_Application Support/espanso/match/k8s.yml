@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+matches:
+  - trigger: ":kubedebug"
+    label: run a debug pod
+    replace: "kubectl run debug -i --tty --image wbitt/network-multitool --rm -n default -- /bin/bash"
+
+  - trigger: ":kgn"
+    label: get pods running on a specific node
+    replace: "kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName="
+
+  - trigger: ":kexec"
+    replace: "kubectl exec -it {{clipb}} -n $|$ -- bash"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+  
+  - trigger: ":kclean"
+    replace: "echo > ~/.kube/config"

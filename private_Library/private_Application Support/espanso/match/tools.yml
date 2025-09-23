@@ -1,0 +1,33 @@
+matches:
+  - trigger: ":rsync"
+    label: sync one folder to another
+    replace: "time rsync $|$ FOLDER2 --dry-run --verbose --compress --update --ignore-existing --recursive --group --times --progress --omit-dir-times --no-perms  --modify-window=120"
+
+  - trigger: ":tmuxsync"
+    replace: "setw synchronize-panes"
+    label: enable multiple cursor on tmux
+
+  - trigger: ":testdockerignore"
+    replace: "rsync -avn . /dev/shm --exclude-from .dockerignore"
+
+  - trigger: ":openssll"
+    replace: "openssl x509 -in '{{clipb}}' -noout -text"
+    label: show the ssl certificate information
+    vars:
+      - name: "clipb"
+        type: "clipboard"
+
+  - trigger: ":openssld"
+    replace: "openssl x509 -in $|$ -noout -date"
+    label: show the ssl certificate date information
+
+  - trigger: ":opensslc"
+    replace: "openssl s_client -showcerts -connect $|$:443 </dev/null"
+    label: uses openssl to test the connection to a specific site
+
+  - trigger: ":ipa"
+    replace: "ip -brief a"
+
+
+  - trigger: ":lazyd"
+    replace: "docker build -t lazyteam/lazydocker --build-arg BASE_IMAGE_BUILDER=arm64v8/golang --build-arg GOARCH=$|$64 https://github.com/jesseduffield/lazydocker.git && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
