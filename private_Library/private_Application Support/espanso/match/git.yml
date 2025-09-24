@@ -1,12 +1,25 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
-    - trigger: "gpd"
-      replace: "git push --delete origin "
-      label: delete branch
+  - trigger: ":gpd"
+    replace: "git push --delete origin "
+    label: delete reference in origin
 
-    - trigger: "gbdm"
-      replace: "git branch | grep -v $|$ | xargs git branch -d {}"
-      label: delete all merged local branches
+  - trigger: ":gbdm"
+    replace: "git branch | grep -v $|$ | xargs git branch -d {}"
+    label: delete all merged local branches
 
-    - trigger: "glp"
-      replace: 'git log --pretty=format:"%h - %an, %ar : %s"'
-      label: show git log
+  - trigger: ":glp"
+    replace: 'git log --pretty=format:"%h - %an, %ar : %s"'
+    label: show git log
+
+  - trigger: ":-grlb"
+    replace: "git branch -m <old name> <new name>"
+    label: "git rename local branch"
+
+  - trigger: ":-glt"
+    replace: "git describe --abbrev=0 --tags"
+    label: "git list lag created tag"
+
+  - trigger: ":-glh"
+    replace: "git log -L{lineNumber},+1:{path}"
+    label: "git show line history"

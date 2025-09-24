@@ -1,0 +1,13 @@
+{{ $email := promptStringOnce . "email" "What is your email address" -}}
+
+pager = "delta"
+
+[data]
+email = {{ $email | quote }}
+
+[edit]
+command = "nvim"
+
+[merge]
+command = "meld"
+args = ["--diff", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]

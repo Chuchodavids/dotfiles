@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+matches:
+  - trigger: "::gcloudsshtunnel"
+    label: "gcloud ssh tunnel to instance"
+    replace: "gcloud beta compute ssh %s --tunnel-through-iap --project %s --zone %s -- -L8888:172.0.0.1:8888"
+  - trigger: "::readjournal"
+    label: "Read startup logs from gcp instance"
+    replace: "sudo journalctl -u google-startup-scripts.service"

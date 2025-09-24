@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
-
 matches:
-  - trigger: ":ps"
-    replace: "ps aux --sort=-%mem | head -n 10"
-    label: show processes using most memory
+  - trigger: ":che"
+    replace: "chezmoi edit "
+  - trigger: ":cha"
+    replace: "chezmoi apply"
