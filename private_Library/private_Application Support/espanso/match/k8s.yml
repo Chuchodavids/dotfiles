@@ -13,6 +13,14 @@ matches:
     vars:
       - name: "clipb"
         type: "clipboard"
-  
+
   - trigger: ":kclean"
     replace: "echo > ~/.kube/config"
+
+  - trigger: "::kgetallwarning"
+    replace: kubectl get events -w --field-selector=type=Warning -A
+    label: get all warninigs events from all namespaces
+
+  - trigger: "::kgetsecret"
+    replace: kubectl get secret $|$ -n namespace -o go-template='{{range $k,$v := .data}}{{"export "}}{{$k}}{{"="}}{{$v|base64decode}}{{"\n"}}{{end}}'
+    label: kubectl get secret decoded

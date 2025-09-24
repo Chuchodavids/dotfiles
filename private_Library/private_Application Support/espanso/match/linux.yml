@@ -4,3 +4,60 @@ matches:
   - trigger: ":ps"
     replace: "ps aux --sort=-%mem | head -n 10"
     label: show processes using most memory
+
+  - trigger: "::rclone"
+    replace: rclone sync $|$ gdrive:backups/appdata/ -vv
+    label: use rclone
+
+  - trigger: "::scriptrunningcheck"
+    replace: pidof -o %PPID -x "$(basename "$0")" > /dev/null && { echo "Script is already running"; exit 1; }
+    label: check if script is already running
+
+  - trigger: "::fixunraidpermissions"
+    replace: chmod -R u-x,go-rwx,go+u,ugo+X .; chown -R nobody:users .
+    label: fix unraid permissions
+
+  - trigger: "::curldifferentdns"
+    replace: curl $|$ --resolve 'HOST:443:34.120.25.27'
+    label: curl to override ip of domain name
+
+  - trigger: "::rsync"
+    replace: rsync --force --delete --exclude 'SOME' --stats -rzaumLP $|$ TARGET
+    label: basic rsync command with delete and exclude
+
+  - trigger: "::dnstroubleshoot"
+    replace: sudo tcpdump -i en0 port 53 -s0 -w dns-traffic.pcap
+    label: dns troubleshoot tcpdump
+
+  - trigger: "::sshconfig"
+    label: basic sshconfig file
+    replace: |
+      Host targaryen
+      HostName 192.168.1.10
+      User daenerys
+      Port 7654
+      IdentityFile ~/.ssh/targaryen.key
+
+  - trigger: "::sshtunnel"
+    replace: ssh -L local_PORT:remote_IP:remote_PORT root@hostname
+    label: basic ssh tunnel
+
+  - trigger: "::bashdebuglinenumber"
+    replace: "PS4='Line ${LINENO}: ' bash -x "
+    label: bash debug with line numbers
+
+  - trigger: "::listappport"
+    replace: lsof -i:8080
+    label: list app on port
+
+  - trigger: "::killapponport"
+    replace: fuser -k 8080/tcp
+    label: kill app on port
+
+  - trigger: "::readopensslcert"
+    replace: openssl x509 -text -noout -in
+    label: openssl read cert
+
+  - trigger: "::readremotecert"
+    replace: openssl s_client -showcerts -connect www.$|$:443
+    label: read remote cert information

@@ -6,9 +6,11 @@ matches:
       select to_char(now() - query_start, 'HH24:MI:SS.MS') as duration_pretty, now() - query_start as duration, *
       from pg_stat_activity
       where state <> 'idle'  and  now() - query_start > (:duration)::interval;
+
   - trigger: ":postgresconnect"
     replace: "psql -h localhost -p 5432 -d postgres -U "
-  - trigger: "posrtgresrouser"
+
+  - trigger: "::-posrtgresrouser"
     label: "creates a read only user"
     replace: |
       CREATE USER username WITH PASSWORD 'password';
@@ -16,3 +18,6 @@ matches:
       GRANT USAGE ON SCHEMA schema_name TO username;
       GRANT SELECT ON table_name TO username;
       GRANT SELECT ON ALL TABLES IN SCHEMA schema_name TO username;
+
+  - trigger: "::postgrestestconnection"
+    replace: psql --host=$DB_HOST --port=$DB_PORT --username=$DB_USER '--command=select 1' --echo-queries --dbname=$DB_NAME"]

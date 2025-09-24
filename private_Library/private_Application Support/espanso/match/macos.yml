@@ -3,3 +3,7 @@ matches:
   - trigger: ":resetcache"
     replace: "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
     label: flush macos cache
+
+  - trigger: "::activaterepeatkeys"
+    replace: defaults write -g ApplePressAndHoldEnabled -bool false
+    label: activate repeat keys
