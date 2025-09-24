@@ -1,13 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
-  - trigger: ":che"
+  - trigger: ":cedit"
     replace: "chezmoi edit "
 
-  - trigger: ":cha"
-    replace: "chezmoi apply"
-
-  - trigger: ":chd"
-    replace: "chezmoi diff\n"
-
-  - trigger: ":chm"
+  - trigger: ":cmerge"
     replace: "chezmoi merge "
+
+  - trigger: ":cadd"
+    replace: "chezmoi add --encrypt "

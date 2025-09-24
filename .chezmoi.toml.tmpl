@@ -1,6 +1,7 @@
 {{ $email := promptStringOnce . "email" "What is your email address" -}}
 
 pager = "delta"
+encryption = "age"
 
 [data]
 email = {{ $email | quote }}
@@ -8,9 +9,10 @@ email = {{ $email | quote }}
 [edit]
 command = "nvim"
 
-#[merge]
-#command = "meld"
-#args = ["--diff", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
 [merge]
     command = "nvim"
     args = ["-d", "{{ "{{" }} .Destination {{ "}}" }}", "{{ "{{" }} .Source {{ "}}" }}", "{{ "{{" }} .Target {{ "}}" }}"]
+
+[age]
+    identity = "/Users/jesus/.ssh/key.txt"
+    recipient = "age1ccctz5rsfgkcfttlem90zg3t0dsawzs6ddt54w7ut9c07wkqpfwss7l7za"
