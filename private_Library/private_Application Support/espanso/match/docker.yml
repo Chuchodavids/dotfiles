@@ -3,6 +3,7 @@ matches:
   - trigger: ":testdockerignore"
     label: "tests docker ignore file"
     replace: "rsync -avn . /dev/shm --exclude-from .dockerignore"
+
   - trigger: "::dockerwithoutsudo"
     label: use docker without sudo
     replace: sudo usermod -aG docker

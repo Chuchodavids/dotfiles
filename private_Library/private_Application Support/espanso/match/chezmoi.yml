@@ -2,5 +2,12 @@
 matches:
   - trigger: ":che"
     replace: "chezmoi edit "
+
   - trigger: ":cha"
     replace: "chezmoi apply"
+
+  - trigger: ":chd"
+    replace: "chezmoi diff\n"
+
+  - trigger: ":chm"
+    replace: "chezmoi merge "
