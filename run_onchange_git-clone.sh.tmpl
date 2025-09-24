@@ -1,0 +1,24 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -e
+set -x
+
+ZSH_PLUGINS_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins
+
+# zsh-autosuggestions
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
+fi
+
+# zsh-autocomplete
+if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autocomplete" ]; then
+    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZSH_PLUGINS_DIR/zsh-autocomplete"
+fi
+
+# fast-syntax-highlighting
+if [ ! -d "$ZSH_PLUGINS_DIR/fast-syntax-highlighting" ]; then
+    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git "$ZSH_PLUGINS_DIR/fast-syntax-highlighting"
+fi
+
+{{ end -}}
