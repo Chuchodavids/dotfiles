@@ -25,3 +25,7 @@ packages:
       - gemini-cli
     casks:
       - logseq
+      - pearcleaner
+      - sublime-text
+      - meld
+      - iterm2
