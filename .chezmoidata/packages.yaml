@@ -1,0 +1,27 @@
+packages:
+  darwin:
+    brews:
+      - age
+      - git-delta
+      - lazygit
+      - npm
+      - bat
+      - k9s
+      - kubectl
+      - terraform
+      - starship
+      - tldr
+      - kubecolor
+      - zsh-completions
+      - ack
+      - zoxide
+      - glow
+      - ripgrep
+      - fd
+      - gh
+      - neovim
+      - tmux
+      - tree
+      - gemini-cli
+    casks:
+      - logseq
