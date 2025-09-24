@@ -29,8 +29,5 @@ matches:
   - trigger: ":ipa"
     replace: "ip -brief a"
 
-  - trigger: ":lazyd"
-    replace: "docker build -t lazyteam/lazydocker --build-arg BASE_IMAGE_BUILDER=arm64v8/golang --build-arg GOARCH=$|$64 https://github.com/jesseduffield/lazydocker.git && docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock -v /yourpath:/.config/jesseduffield/lazydocker lazyteam/lazydocker"
-
   - trigger: ":cheat"
     replace: "curl cheat.sh/"
