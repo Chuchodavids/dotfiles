@@ -14,3 +14,6 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlightin
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(starship init zsh)"
+
+alias k="kubectl"
