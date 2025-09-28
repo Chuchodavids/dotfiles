@@ -11,6 +11,11 @@
 	blamee = blame -w -C -C -C
 	fpush = push --force-with-lease
 	difl = diff @{upstream}
+	lg = log --color --graph --pretty=format:'%C(bold green)%h%Creset -%C(bold yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status -sb
+	last = log -1 HEAD --stat
+	d = diff
+	se = !git rev-list --all | xargs git grep -F
 [core]
   editor = nvim
   pager = delta
