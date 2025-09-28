@@ -5,6 +5,7 @@ packages:
       - age
       - bat
       - fd
+      - fzf
       - gemini-cli
       - gh
       - git-delta

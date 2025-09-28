@@ -29,3 +29,5 @@ if [ -f '/Users/chuchodavids/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ch
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/chuchodavids/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/chuchodavids/google-cloud-sdk/completion.zsh.inc'; fi
+
+alias ff='fzf --preview "bat --color=always --style=numbers --line-range=:500 {}"'

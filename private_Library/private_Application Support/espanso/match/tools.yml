@@ -31,3 +31,9 @@ matches:
 
   - trigger: ":cheat"
     replace: "curl cheat.sh/"
+
+  - trigger: ":fd"
+    replace: "fd $|$ -X bat"
+
+  - trigger: ":tail"
+    replace: "tail -f $|$ | bat --paging=never -l log"
