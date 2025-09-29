@@ -37,3 +37,11 @@ matches:
 
   - trigger: ":tail"
     replace: "tail -f $|$ | bat --paging=never -l log"
+
+  - trigger: ":seddl"
+    replace: 'sed i.bak "|$|d"'
+    label: SED delete line
+
+  - trigger: ":sedd"
+    replace: "sed 's/OLD/NEW/' FILE"
+    label: "SED basic command"
