@@ -8,7 +8,7 @@ ZSH_PLUGINS_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins
 
 # zsh-autosuggestions
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
+    git clone --depth 1 -- https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 fi
 
 # zsh-autocomplete
@@ -18,10 +18,19 @@ fi
 
 # fast-syntax-highlighting
 if [ ! -d "$ZSH_PLUGINS_DIR/fast-syntax-highlighting" ]; then
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git "$ZSH_PLUGINS_DIR/fast-syntax-highlighting"
+    git clone --depth 1 -- https://github.com/zdharma-continuum/fast-syntax-highlighting.git "$ZSH_PLUGINS_DIR/fast-syntax-highlighting"
 fi
 
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
+    git clone --depth 1 -- https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
 fi
+
+if [ ! -d ".oh-my-zsh/custom/themes/powerlevel9k" ]; then
+  git clone --depth 1 -- https://github.com/bhilburn/powerlevel9k.git ".oh-my-zsh/custom/themes/powerlevel9k"
+fi
+
+if [ ! -d ".oh-my-zsh/custom/themes/powerlevel10k" ]; then
+  git clone --depth 1 -- https://github.com/romkatv/powerlevel10k.git ".oh-my-zsh/custom/themes/powerlevel10k"
+fi
+
 {{ end -}}
