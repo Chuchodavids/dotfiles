@@ -2,11 +2,11 @@
 matches:
   - trigger: ":gpd"
     replace: "git push --delete origin "
-    label: delete reference in origin
+    label: git delete reference in origin
 
   - trigger: ":gbdm"
     replace: "git branch | grep -v $|$ | xargs git branch -d {}"
-    label: delete all merged local branches
+    label: git delete all merged local branches
 
   - trigger: ":glp"
     replace: 'git log --pretty=format:"%h - %an, %ar : %s"'

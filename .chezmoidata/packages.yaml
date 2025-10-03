@@ -18,6 +18,7 @@ packages:
       - npm
       - ripgrep
       - starship
+      - task
       - terraform
       - tldr
       - tmux

@@ -29,6 +29,7 @@ alias k="kubectl"
 alias ct="kubectx"
 alias ns="kubens"
 alias lg="lazygit"
+alias t="task"
 eval "$(zoxide init zsh)"
 
 zstyle ':autocomplete:*' delay 0.5  # seconds (float)
