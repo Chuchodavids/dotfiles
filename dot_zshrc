@@ -33,6 +33,7 @@ alias tita="terragrunt init -upgrade && terragrunt apply"
 alias tp="terragrunt plan"
 alias ta="terragrunt apply"
 alias t="task"
+alias cat='bat --paging=never'
 eval "$(zoxide init zsh)"
 
 zstyle ':autocomplete:*' delay 0.5  # seconds (float)
