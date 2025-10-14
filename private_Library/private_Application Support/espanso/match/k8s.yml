@@ -24,3 +24,9 @@ matches:
   - trigger: "::kgetsecret"
     replace: kubectl get secret $|$ -n namespace -o go-template='{{range $k,$v := .data}}{{"export "}}{{$k}}{{"="}}{{$v|base64decode}}{{"\n"}}{{end}}'
     label: kubectl get secret decoded
+
+  - trigger: ":kdrain"
+    replace: "kubectl drain {{ clipb }} --delete-emptydir-data --ignore-daemonsets"
+    vars:
+      - name: "clipb"
+        type: "clipboard"
