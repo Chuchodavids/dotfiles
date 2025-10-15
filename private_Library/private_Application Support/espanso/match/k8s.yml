@@ -30,3 +30,7 @@ matches:
     vars:
       - name: "clipb"
         type: "clipboard"
+
+  - trigger: "::kforcedelete"
+    replace: 'curl -H "Content-Type: application/yaml" -X PUT --data-binary @FILE.yml http://127.0.0.1:8001/api/v1/namespaces/$|$/finalize'
+    label: force delete a kubernetes resource
