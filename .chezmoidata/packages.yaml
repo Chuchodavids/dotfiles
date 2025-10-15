@@ -25,10 +25,10 @@ packages:
       - tree
       - zoxide
       - zsh-completions
-      - maccy
     casks:
       - iterm2
       - logseq
       - meld
       - pearcleaner
       - sublime-text
+      - maccy
