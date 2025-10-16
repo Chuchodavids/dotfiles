@@ -4,6 +4,12 @@ matches:
     label: run a debug pod
     replace: "kubectl run debug -i --tty --image wbitt/network-multitool --rm -n default -- /bin/bash"
 
+  - trigger: ":kdebug"
+    replace: "kubectl debug -it --profile=general --image=wbitt/network-multitool --target=$|$ {{ clipb }} -- bash"
+    vars:
+      - type: clipboard
+        name: clipb
+
   - trigger: ":kgn"
     label: get pods running on a specific node
     replace: "kubectl get pods --all-namespaces -o wide --field-selector spec.nodeName="
