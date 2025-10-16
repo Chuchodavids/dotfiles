@@ -4,7 +4,7 @@ matches:
     label: sync one folder to another
     replace: "time rsync $|$ FOLDER2 --dry-run --verbose --compress --update --ignore-existing --recursive --group --times --progress --omit-dir-times --no-perms  --modify-window=120"
 
-  - trigger: ":tmuxsync"
+  - trigger: ":tmuxs"
     replace: "setw synchronize-panes"
     label: enable multiple cursor on tmux
 
