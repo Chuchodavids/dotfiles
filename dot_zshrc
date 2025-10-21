@@ -25,6 +25,8 @@ eval "$(starship init zsh)"
 source <(chezmoi completion zsh)
 source <(gh completion -s zsh)
 source <(helm completion zsh)
+source <(colima completion zsh)
+source <(kustomize completion zsh)
 
 alias k="kubectl"
 alias kb="kustomize build"
@@ -38,7 +40,10 @@ alias ta="terragrunt apply"
 alias t="task"
 alias cat='bat --paging=never'
 alias kgnw="kubectl get nodes -owide"
+alias ka="kubectl apply -k . --server-side --force-conflicts"
+
 eval "$(zoxide init zsh)"
+
 
 zstyle ':autocomplete:*' delay 0.5  # seconds (float)
 # The next line updates PATH for the Google Cloud SDK.

@@ -25,6 +25,10 @@ packages:
       - tree
       - zoxide
       - zsh-completions
+      - kustomize
+      - helm
+      - colima
+      - docker
     casks:
       - iterm2
       - logseq
