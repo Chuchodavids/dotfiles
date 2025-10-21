@@ -27,6 +27,8 @@ source <(gh completion -s zsh)
 source <(helm completion zsh)
 
 alias k="kubectl"
+alias kb="kustomize build"
+alias kbka="kustomize build | kubectl apply -f -"
 alias ct="kubectx"
 alias ns="kubens"
 alias lg="lazygit"
