@@ -4,15 +4,19 @@ packages:
       - ack
       - age
       - bat
+      - colima
+      - docker
       - fd
       - fzf
       - gemini-cli
       - gh
       - git-delta
       - glow
+      - helm
       - k9s
       - kubecolor
       - kubectl
+      - kustomize
       - lazygit
       - neovim
       - npm
@@ -25,10 +29,6 @@ packages:
       - tree
       - zoxide
       - zsh-completions
-      - kustomize
-      - helm
-      - colima
-      - docker
     casks:
       - iterm2
       - logseq
