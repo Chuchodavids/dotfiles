@@ -23,3 +23,5 @@ matches:
   - trigger: ":-glh"
     replace: "git log -L{lineNumber},+1:{path}"
     label: "git show line history"
+  - trigger: ":gls"
+    replace: "git log --all --grep='$|$'"
