@@ -29,7 +29,7 @@ packages:
       - tree
       - zoxide
       - zsh-completions
-      - stats
+      - eza
     casks:
       - iterm2
       - logseq
@@ -37,3 +37,4 @@ packages:
       - pearcleaner
       - sublime-text
       - maccy
+      - stats

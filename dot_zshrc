@@ -41,6 +41,7 @@ alias t="task"
 alias cat='bat --paging=never'
 alias kgnw="kubectl get nodes -owide"
 alias ka="kubectl apply -k . --server-side --force-conflicts"
+alias ll="eza -l"
 
 eval "$(zoxide init zsh)"
 
