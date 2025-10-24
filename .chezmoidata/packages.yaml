@@ -29,6 +29,7 @@ packages:
       - tree
       - zoxide
       - zsh-completions
+      - stats
     casks:
       - iterm2
       - logseq
