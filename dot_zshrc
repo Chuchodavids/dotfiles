@@ -41,7 +41,9 @@ alias t="task"
 alias cat='bat --paging=never'
 alias kgnw="kubectl get nodes -owide"
 alias ka="kubectl apply -k . --server-side --force-conflicts"
-alias ll="eza -l"
+alias ll="eza -lbF --git --header"
+alias la="eza -lbhHigUmuSa --time-style=long-iso --git --color-scale"
+alias lt="eza --tree --level=2"
 
 eval "$(zoxide init zsh)"
 
