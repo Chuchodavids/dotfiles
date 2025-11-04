@@ -2,7 +2,7 @@
 matches:
   - trigger: ":rsync"
     label: sync one folder to another
-    replace: "time rsync $|$ FOLDER2 --dry-run --verbose --compress --update --ignore-existing --recursive --group --times --progress --omit-dir-times --no-perms  --modify-window=120"
+    replace: "rsync $|$ FOLDER2 --port 22 --verbose --compress --update --ignore-existing --recursive --group --times --progress --omit-dir-times --no-perms  --modify-window=120"
 
   - trigger: ":tmuxs"
     replace: "setw synchronize-panes"

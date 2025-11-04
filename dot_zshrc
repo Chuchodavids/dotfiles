@@ -30,7 +30,7 @@ source <(kustomize completion zsh)
 
 alias k="kubectl"
 alias kb="kustomize build"
-alias kbka="kustomize build | kubectl apply -f -"
+alias kbka="kustomize build . --enable-helm | kubectl apply --server-side --force-conflicts -f -"
 alias ct="kubectx"
 alias ns="kubens"
 alias lg="lazygit"
