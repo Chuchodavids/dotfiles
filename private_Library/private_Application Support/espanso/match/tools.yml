@@ -45,3 +45,19 @@ matches:
   - trigger: ":sedd"
     replace: "sed 's/OLD/NEW/' FILE"
     label: "SED basic command"
+
+  - trigger: ":taa"
+    replace: "task add "
+    label: "Taskwarrior add"
+
+  - trigger: ":tam"
+    replace: "task $|$ modify "
+    label: "Taskwarrior modify"
+
+  - trigger: ":taskl4"
+    replace: task entry.after:today-4days list
+    label: "Taskwarrior show tasks created last 4 days"
+
+  - trigger: ":taskc"
+    replace: "task end.after:today-1wk completed"
+    label: "Taskwarrior show completed in the last week"
