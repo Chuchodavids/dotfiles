@@ -28,7 +28,7 @@ source <(helm completion zsh)
 source <(colima completion zsh)
 source <(kustomize completion zsh)
 
-alias k="kubectl"
+alias k="kubecolor"
 alias kb="kustomize build"
 alias kbka="kustomize build . --enable-helm | kubectl apply --server-side --force-conflicts -f -"
 alias ct="kubectx"
