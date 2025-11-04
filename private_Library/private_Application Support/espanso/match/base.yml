@@ -1,13 +1,12 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 matches:
-
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%Y-%m-%d"
 
   - trigger: ":tomorrow"
     replace: "{{mytime}}"
@@ -17,7 +16,7 @@ matches:
         params:
           format: "%x"
           offset: 86400
-          
+
   - trigger: ":yesterday"
     replace: "{{mytime}}"
     vars:
@@ -25,7 +24,7 @@ matches:
         type: date
         params:
           format: "%x"
-          offset: -86400          
+          offset: -86400
 
   - trigger: ":myip"
     replace: "{{output}}"
