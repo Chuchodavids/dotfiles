@@ -30,6 +30,7 @@ packages:
       - zoxide
       - zsh-completions
       - eza
+      - git-filter-repo
     casks:
       - iterm2
       - logseq
