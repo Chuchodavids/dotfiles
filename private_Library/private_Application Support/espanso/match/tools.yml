@@ -61,3 +61,6 @@ matches:
   - trigger: ":taskc"
     replace: "task end.after:today-1wk completed"
     label: "Taskwarrior show completed in the last week"
+
+  - trigger: ":terratags"
+    replace: terragrunt plan -out=tfplan; terragrunt show -json tfplan > plan.json; terratags -config ~/terratags.yaml -plan plan.json

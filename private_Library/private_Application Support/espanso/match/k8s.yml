@@ -40,3 +40,7 @@ matches:
   - trigger: "::kforcedelete"
     replace: 'curl -H "Content-Type: application/yaml" -X PUT --data-binary @FILE.yml http://127.0.0.1:8001/api/v1/namespaces/$|$/finalize'
     label: force delete a kubernetes resource
+
+  - trigger: ":scaledown"
+    replace: "kubectl scale statefulset,deployment -n $|$ --all --replicas=0"
+    label: Scale down all deployments
