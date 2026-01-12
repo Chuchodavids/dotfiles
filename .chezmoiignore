@@ -1,7 +1,6 @@
 **/*DS_Store
 **/.git
 key.txt.age
-Library/**
 
 {{ if ne .chezmoi.os "darwin" }}
 Library/**

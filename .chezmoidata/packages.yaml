@@ -60,7 +60,6 @@ packages:
       - konsole
     snap:
       - lazygit
-      - git-delta-snap
     snapclassic:
       - helm
       - nvim
