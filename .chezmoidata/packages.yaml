@@ -39,3 +39,29 @@ packages:
       - sublime-text
       - maccy
       - stats
+  ubuntu:
+    apt:
+      - vim
+      - fzf
+      - tmux
+      - age
+      - ripgrep
+      - fd-find
+      - bat
+      - tldr
+      - zoxide
+      - zsh
+      - jq
+      - gnupg
+      - curl
+      - gcc
+      - gh
+      - software-properties-common
+      - konsole
+    snap:
+      - lazygit
+      - git-delta-snap
+    snapclassic:
+      - helm
+      - nvim
+      - kustomize
