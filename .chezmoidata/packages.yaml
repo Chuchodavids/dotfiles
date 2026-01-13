@@ -58,6 +58,7 @@ packages:
       - gh
       - software-properties-common
       - konsole
+      - build-essential
     snap:
       - lazygit
     snapclassic:

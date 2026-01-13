@@ -26,9 +26,13 @@ source <(chezmoi completion zsh)
 source <(gh completion -s zsh)
 source <(kustomize completion zsh)
 source <(helm completion zsh)
-{{ if eq .chezmoi.os "dawrin" }}
+{{ if eq .chezmoi.os "dawrin" -}}
 source <(colima completion zsh)
 export PATH="$PATH:/opt/homebrew/share/google-cloud-sdk/bin"
+{{end}}
+{{ if eq .chezmoi.os "linux" -}}
+export PATH="$PATH":/home/linuxbrew/.linuxbrew/bin:/snap/bin:
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 {{end}}
 
 alias k="kubecolor"

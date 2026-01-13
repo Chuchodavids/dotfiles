@@ -5,7 +5,7 @@ gui:
   showFileTree: true
 
 os:
-  edit: nvim {{filename}}
+  edit: nvim '{{`{{`}}filename}}'
 git:
   paging:
     colorArg: always
