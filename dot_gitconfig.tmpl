@@ -60,8 +60,12 @@
     hunk-header-line-number-style = "#067a00"
     hunk-header-style = file line-number syntax
 [credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+{{ if eq .chezmoi.os "linux" -}}
+  {{ "\t" }}helper = !/usr/bin/gh auth git-credential
+{{ else if eq .chezmoi.os "darwin" }}
+	{{ "\t" }}helper = !/opt/homebrew/bin/gh auth git-credential
+{{ end -}}
+
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
