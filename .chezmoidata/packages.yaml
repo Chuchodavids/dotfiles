@@ -59,9 +59,8 @@ packages:
       - software-properties-common
       - konsole
       - build-essential
-    snap:
+    brew:
       - lazygit
-    snapclassic:
       - helm
       - nvim
       - kustomize

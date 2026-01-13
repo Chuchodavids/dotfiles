@@ -18,8 +18,11 @@ EOF
 # Update and install APT packages for Ubuntu
 sudo apt-get update
 sudo apt-get install -y {{ range .packages.ubuntu.apt }}{{ . | quote }} {{ end }}
-for pkg in {{ range .packages.ubuntu.snap }}{{ . | quote }} {{ end }}; do sudo snap install "$pkg"; done
-for pkg in {{ range .packages.ubuntu.snapclassic }}{{ . | quote }} {{ end }}; do sudo snap install --classic "$pkg"; done
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.ubuntu.brew -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
 {{ end -}}
 
 {{ end -}}
