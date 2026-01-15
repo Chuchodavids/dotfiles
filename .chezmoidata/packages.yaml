@@ -57,7 +57,6 @@ packages:
       - gcc
       - gh
       - software-properties-common
-      - konsole
       - build-essential
     brew:
       - lazygit
