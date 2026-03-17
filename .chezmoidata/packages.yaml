@@ -64,3 +64,5 @@ packages:
       - helm
       - nvim
       - kustomize
+      - golang
+      - delve
