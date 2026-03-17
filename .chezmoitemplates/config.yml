@@ -6,7 +6,7 @@ gui:
 os:
   edit: nvim '{{`{{`}}filename}}'
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
-    useExternalDiffGitConfig: false
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+      useExternalDiffGitConfig: false
