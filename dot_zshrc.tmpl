@@ -29,6 +29,9 @@ plugins=(opentofu aws tailscale git zsh-autosuggestions zsh-syntax-highlighting 
 alias tita="tofu init -upgrade && tofu apply"
 alias tp="tofu plan"
 alias ta="tofu apply"
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias fd="fdfind"
 export TF_PLUGIN_CACHE_DIR=$HOME/.opentofu/plugin-cache
 {{end}}
 
