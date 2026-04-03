@@ -25,3 +25,8 @@ matches:
     label: "git show line history"
   - trigger: ":gls"
     replace: "git log --all --grep='$|$'"
+  - trigger: ":githash"
+    replace: git ls-remote {{clipb}} refs/tags/v$|$
+    vars:
+      - type: clipboard
+        name: clipb
