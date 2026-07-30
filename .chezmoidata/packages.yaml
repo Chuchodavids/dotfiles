@@ -1,14 +1,10 @@
 packages:
   darwin:
     brews:
-      - ack
       - age
       - bat
-      - colima
-      - docker
       - fd
       - fzf
-      - gemini-cli
       - gh
       - git-delta
       - glow
@@ -21,7 +17,6 @@ packages:
       - neovim
       - npm
       - ripgrep
-      - starship
       - task
       - terraform
       - tldr
@@ -31,15 +26,7 @@ packages:
       - zsh-completions
       - eza
       - git-filter-repo
-      - viddy
-    casks:
-      - iterm2
-      - logseq
-      - meld
-      - pearcleaner
-      - sublime-text
-      - maccy
-      - stats
+      - vu
   ubuntu:
     apt:
       - vim

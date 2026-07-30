@@ -4,33 +4,33 @@
 set -e
 set -x
 
-ZSH_PLUGINS_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins
+ZSH_DIR="${ZSH:-$HOME/.oh-my-zsh}"
+
+# Install oh-my-zsh first. Its installer replaces $ZSH_DIR wholesale, so cloning
+# plugins before it exists silently loses them (this is what happened Jun 2026).
+# KEEP_ZSHRC=yes is required or it overwrites the chezmoi-managed ~/.zshrc.
+if [ ! -d "$ZSH_DIR" ]; then
+    RUNZSH=no CHSH=no KEEP_ZSHRC=yes \
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+ZSH_PLUGINS_DIR="${ZSH_CUSTOM:-$ZSH_DIR/custom}/plugins"
+ZSH_THEMES_DIR="${ZSH_CUSTOM:-$ZSH_DIR/custom}/themes"
+mkdir -p "$ZSH_PLUGINS_DIR" "$ZSH_THEMES_DIR"
 
 # zsh-autosuggestions
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autosuggestions" ]; then
     git clone --depth 1 -- https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_PLUGINS_DIR/zsh-autosuggestions"
 fi
 
-# zsh-autocomplete
-if [ ! -d "$ZSH_PLUGINS_DIR/zsh-autocomplete" ]; then
-    git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git "$ZSH_PLUGINS_DIR/zsh-autocomplete"
-fi
-
-# fast-syntax-highlighting
-if [ ! -d "$ZSH_PLUGINS_DIR/fast-syntax-highlighting" ]; then
-    git clone --depth 1 -- https://github.com/zdharma-continuum/fast-syntax-highlighting.git "$ZSH_PLUGINS_DIR/fast-syntax-highlighting"
-fi
-
+# zsh-syntax-highlighting
 if [ ! -d "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting" ]; then
     git clone --depth 1 -- https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_PLUGINS_DIR/zsh-syntax-highlighting"
 fi
 
-if [ ! -d ".oh-my-zsh/custom/themes/powerlevel9k" ]; then
-  git clone --depth 1 -- https://github.com/bhilburn/powerlevel9k.git ".oh-my-zsh/custom/themes/powerlevel9k"
-fi
-
-if [ ! -d ".oh-my-zsh/custom/themes/powerlevel10k" ]; then
-  git clone --depth 1 -- https://github.com/romkatv/powerlevel10k.git ".oh-my-zsh/custom/themes/powerlevel10k"
+# powerlevel10k (ZSH_THEME in dot_zshrc.tmpl)
+if [ ! -d "$ZSH_THEMES_DIR/powerlevel10k" ]; then
+    git clone --depth 1 -- https://github.com/romkatv/powerlevel10k.git "$ZSH_THEMES_DIR/powerlevel10k"
 fi
 
 {{ end -}}
