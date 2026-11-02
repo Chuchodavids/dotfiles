@@ -45,8 +45,7 @@ export TF_PLUGIN_CACHE_DIR=$HOME/.opentofu/plugin-cache
 source $ZSH/oh-my-zsh.sh
 
 {{ if eq .chezmoi.os "linux" -}}
-export PATH="$PATH":/home/linuxbrew/.linuxbrew/bin:/snap/bin:
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export BROWSER=wslview
 {{end}}
 
@@ -86,3 +85,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+{{ if eq .chezmoi.os "linux" -}}
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C "$(brew --prefix)/bin/tofu" tofu
+export PATH="$HOME/.local/bin:$PATH"
+{{end}}
